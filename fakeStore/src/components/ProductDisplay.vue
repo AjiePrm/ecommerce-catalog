@@ -1,6 +1,31 @@
 <script>
+import axios from 'axios'
 
+
+export default {
+  data () {
+    return {
+      product: null,
+      loading: true,
+      errored: false
+    }
+  },
+  mounted () {
+    axios
+      .get('https://fakestoreapi.com/products/')
+      .then(response => {
+        this.product = response.json
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => this.loading = false)
+  }
+}
 </script>
+
+
 
 <template>
     <div class="container-wrapper">
@@ -9,7 +34,7 @@
        </div>
 
        <div class="container-detail">
-        <h1 class="title-female">DANVOUY Womens T Shirt Casual Cotton Short</h1>
+        <h1 class="title-female">{{ title }}</h1>
         
         <div class="categorise">
         <h5 class="item-tag">Women's clothing</h5>
@@ -25,7 +50,7 @@
 
        <div class="button-styel">
         <button class="btn-buy" type="submit">Buy Now</button>
-        <button class="btn-next" type="submit">Next Product</button>
+        <button class="btn-next" type="submit" >Next Product</button>
        </div>
        </div>
        
