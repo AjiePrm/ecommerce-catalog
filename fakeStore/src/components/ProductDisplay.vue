@@ -1,28 +1,22 @@
 <script>
-import axios from 'axios'
-
 
 export default {
-  data () {
-    return {
-      product: null,
-      loading: true,
-      errored: false
-    }
-  },
-  mounted () {
-    axios
-      .get('https://fakestoreapi.com/products/')
-      .then(response => {
-        this.product = response.json
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-  }
-}
+    data() {
+      return {
+        data: null,
+      };
+    },
+    methods: {
+      async fetchData() {      
+        const response = await fetch("https://fakestoreapi.com/products/");      
+        this.data = await response.json();
+      },    
+    },
+    mounted() {
+      this.fetchData();
+    },
+  };
+
 </script>
 
 
@@ -30,22 +24,21 @@ export default {
 <template>
     <div class="container-wrapper">
        <div class="img-cover">
-        <img class="img-content" src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="">
+        <img v-if="data" class="img-content" :src="data[0].image" alt="Product image">
        </div>
-
        <div class="container-detail">
-        <h1 class="title-female">{{ title }}</h1>
-        
+        <div v-if="!data">Loading</div>
+        <h1 v-else class="title-female">{{ data[0].title }}</h1>
         <div class="categorise">
-        <h5 class="item-tag">Women's clothing</h5>
+        <h5 v-if="data" class="item-tag">{{ data[0].category }}</h5>
        </div>
 
        <div class="description">
-        <p class="decript-tag">100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON </p>
+        <p v-if="data" class="decript-tag">{{ data[0].description }}</p>
        </div>
 
        <div class="bottom-detail">
-        <h1 class="title-female"> $22.28</h1>
+        <h1 v-if="data" class="title-female">${{data[0].price}}</h1>
        </div>
 
        <div class="button-styel">
