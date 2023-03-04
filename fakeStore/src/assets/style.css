@@ -39,6 +39,8 @@
 }
 
 .categorise{
+    display: flex;
+    flex-direction: row;
     margin-top: 22px;
     color: #3F3F3F;
     margin-right: 41px;
@@ -47,6 +49,10 @@
 
 .item-tag{
     padding-bottom: 6px;
+}
+
+.item-rate{
+    left: 410px;
 }
 
 .description{
