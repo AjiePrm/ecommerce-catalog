@@ -1,3 +1,17 @@
+.bg-color-male{
+    background: url('./image/bg-pattern.svg'), url('./image//Rectangle-male.svg');
+    background-size: auto auto;
+    background-repeat:repeat-x;
+    background-color: white ;
+}
+
+.bg-color-female{
+    background: url('./image/bg-pattern.svg'), url('./image//Rectangle-Female.svg');
+    background-size: auto auto;
+    background-repeat:repeat-x;
+    background-color: white ;
+}
+
 .container-wrapper{
     display: flex;
     width: 1034px;
@@ -37,6 +51,14 @@
    font-size: 28px;
    line-height: 34px;  
 }
+
+.title-male{
+    color: #002772;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;  
+ }
 
 .categorise{
     display: flex;
@@ -115,7 +137,11 @@
 
 }
 
-.btn-buy:hover, .btn-next:hover{
+.btn-buy:hover{
+    border: 2px solid gray;
+} 
+
+.btn-next:hover{
     background: grey;
 }
  

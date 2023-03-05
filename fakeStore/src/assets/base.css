@@ -62,7 +62,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: url('./image//bg-pattern.svg'), url('./image/Rectangle-Female.svg');
+  background: url('./image//bg-pattern.svg');
   background-color: white ;
   background-size: auto auto;
   background-repeat:repeat-x;
