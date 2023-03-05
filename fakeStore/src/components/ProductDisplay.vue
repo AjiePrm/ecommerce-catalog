@@ -41,7 +41,7 @@ export default {
       this.categorise = "women's clothing"
       document.body.setAttribute("class", "bg-color-female")
     } else if (this.data.category === "jewelery" || this.data.category === "electronics" ){
-      
+      //index jump
       let found = false;
       for (let i = this.index + 1; i < this.allData.length; i++) {
         if (this.allData[i].category === "men's clothing" || this.allData[i].category === "women's clothing") {
