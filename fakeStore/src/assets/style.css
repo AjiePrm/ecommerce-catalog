@@ -71,10 +71,23 @@
 
 .item-tag{
     padding-bottom: 6px;
+    font-size: 18px;
 }
 
 .item-rate{
-    left: 410px;
+    float:left;
+    padding-right: 5px;
+    font-size: 18px;
+}
+.circle{
+   box-sizing: border-box;
+   padding: 0 1px;
+   
+}
+.circle img{
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
 }
 
 .description{
@@ -125,6 +138,7 @@
     border-radius: 4px;
     color: aliceblue;
     border: none;
+    opacity: 1;
 }
 
 .btn-next{
@@ -139,9 +153,14 @@
 
 .btn-buy:hover{
     border: 2px solid gray;
+    opacity: 0.5;
 } 
 
 .btn-next:hover{
     background: grey;
 }
  
+.ratting-wrapper{
+    flex-direction: row;
+    left: 290px;
+}

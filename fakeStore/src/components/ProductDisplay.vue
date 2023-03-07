@@ -85,8 +85,26 @@ export default {
         <h1 v-if="data" :class= "active ? 'title-male' :  'title-female'" >{{ data.title }}</h1>
         <div class="categorise">
         <h5 v-if="data" class="item-tag">{{ data.category }}</h5>
-        <h5 v-if="data" class="item-rate">{{data.rating.rate}}/5</h5>
+        <div class="ratting-wrapper">
+            <h5 v-if="data" class="item-rate">{{data.rating.rate}}/5</h5> 
+            <span class="circle">
+              <img src="../assets/image/Ellipse-placeholder-male.svg" alt="."/>
+            </span>
+            <span class="circle">
+              <img src="../assets/image/Ellipse-placeholder-male.svg" alt="."/>
+            </span>
+            <span class="circle">
+              <img src="../assets/image/Ellipse-placeholder-male.svg" alt="."/>
+            </span>
+            <span class="circle">
+              <img src="../assets/image/Ellipse-placeholder-male.svg" alt="."/>
+            </span>
+            <span class="circle">
+              <img src="../assets/image/Ellipse-placeholder-male.svg" alt="."/>
+            </span>
+        </div>
        </div>
+       
 
        <div class="description">
         <p v-if="data" class="decript-tag">{{ data.description }}</p>
